@@ -23,13 +23,19 @@ U-Net модель для сегментации опухолей на УЗИ м
    pip install -r requirements.txt
 ```
 
-2. Запусти ноутбук:
+2. Установи Jupyter Notebook
+
+```bash
+   pip install jupyter
+```
+
+3. Запусти ноутбук:
 
 ```bash
    jupyter notebook
 ```
 
-3. Открой и выполни `breast_cancer_unet.ipynb`
+4. Открой и выполни `./model_learn/segmentation-model-for-breast-cancer.ipynb`
 
 ## 🧠 Дообучение
 
@@ -42,3 +48,22 @@ U-Net модель для сегментации опухолей на УЗИ м
 ```python
 model.save('BreastCancerSegmentor.h5')
 ```
+
+Чтобы загрузить:
+
+```python
+from tensorflow.keras.models import load_model
+model = load_model('BreastCancerSegmentor.h5')
+```
+
+# Результаты
+
+| Входное изображение       | Истинная маска         | Предсказанная маска      |
+| ------------------------- | ---------------------- | ------------------------ |
+| ![](results/0_input.png)  | ![](results/0_gt.png)  | ![](results/0_pred.png)  |
+| ![](results/4_input.png)  | ![](results/4_gt.png)  | ![](results/4_pred.png)  |
+| ![](results/6_input.png)  | ![](results/6_gt.png)  | ![](results/6_pred.png)  |
+| ![](results/8_input.png)  | ![](results/8_gt.png)  | ![](results/8_pred.png)  |
+| ![](results/10_input.png) | ![](results/10_gt.png) | ![](results/10_pred.png) |
+| ![](results/12_input.png) | ![](results/12_gt.png) | ![](results/12_pred.png) |
+| ![](results/14_input.png) | ![](results/14_gt.png) | ![](results/14_pred.png) |
